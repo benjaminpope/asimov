@@ -16,4 +16,4 @@ source $EBROOTANACONDA3/etc/profile.d/conda.sh
 
 conda activate dlux
 
-srun /scratch/user/uqbpope/code/asimov/dlux_test.py > output
+srun /scratch/user/uqbpope/code/asimov/scripts/dlux_test.py > output
