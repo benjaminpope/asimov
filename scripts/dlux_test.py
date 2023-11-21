@@ -81,19 +81,8 @@ transmission = optics.aperture.transmission
 
 # Let examine the optics object! The dLux framework has in-built 
 # pretty-printing, so we can just print the object to see what it contains.
+print('Optics object:\n')
 print(optics)
-
-AngularOpticalSystem(
-  wf_npixels=512,
-  diameter=1.0,
-  layers={
-    'aperture':
-    TransmissiveLayer(transmission=f32[512,512], normalise=True)
-  },
-  psf_npixels=64,
-  oversample=3,
-  psf_pixel_scale=0.05
-)
 
 # Plot the results
 plt.figure(figsize=(10, 4))
