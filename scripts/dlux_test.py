@@ -27,6 +27,9 @@ plt.rcParams["font.family"] = "serif"
 plt.rcParams["image.origin"] = 'lower'
 plt.rcParams['figure.dpi'] = 72
 
+'''-----------------------------------------------------------
+-----------------------------------------------------------'''
+
 # Explore the environment
 print('Jax devices:',jax.device_count())
 
@@ -67,12 +70,25 @@ print('Initialization time: %.3f s' % (toc-tic))
 tic = clock()
 # Models some wavelengths through the system
 wavels = 1e-6 * np.linspace(1, 1.2, 10)
-psf = optics.propagate(wavels)
+propagate = jit(optics.propagate)
+psf = propagate(wavels)
 toc = clock()
 
-print('Propagation time: %.3f s' % (toc-tic))
+print('First Propagation time: %.3f s' % (toc-tic))
 
 tic = clock()
+
+ts = []
+for j in range(10):
+    tic = clock()
+    psf = propagate(wavels)
+    toc = clock()
+    t = toc-tic
+    ts.append(t)
+
+ts = np.array(ts)
+
+print(f'Average jitted propagation time: {ts.mean():.2f} +- {ts.std():.2f} s')
 
 # Get out aperture transmission for plotting
 # Note we can use the 'aperture' key we supplied in the layers to access 
