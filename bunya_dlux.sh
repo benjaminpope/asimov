@@ -7,7 +7,7 @@
 #SBATCH --time=1:00:00
 #SBATCH --partition=general
 #SBATCH --account=a_astro
-#SBATCH -o slurm.output
+#SBATCH -o allcores.txt
 #SBATCH -e slurm.error
 
 # Load the necessary modules
