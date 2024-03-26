@@ -1,0 +1,5 @@
+If you have a permission problem:
+
+You could run a chmod command in your job script every time (it won't matter if it is already executable), or, more elegantly, you could check and fix as necessary using a shell if statement.
+ 
+https://github.com/UQ-RCC/hpc-docs/blob/main/guides/Shell-Basics-for-HPC.md#shell-language-features
