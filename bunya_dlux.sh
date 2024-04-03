@@ -14,6 +14,6 @@
 module load anaconda3/2022.05
 source $EBROOTANACONDA3/etc/profile.d/conda.sh
 
-conda activate dlux
+conda activate dLux
 
 srun /scratch/user/uqbpope/code/asimov/scripts/dlux_test.py > allcores.txt
