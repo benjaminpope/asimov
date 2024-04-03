@@ -2,12 +2,12 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=96
-#SBATCH --mem=200000M
+#SBATCH --mem=2000000M
 #SBATCH --job-name=test
 #SBATCH --time=1:00:00
 #SBATCH --partition=general
 #SBATCH --account=a_astro
-#SBATCH -o allcores.txt
+#SBATCH -o slurm.out
 #SBATCH -e slurm.error
 
 # Load the necessary modules
